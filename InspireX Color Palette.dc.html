@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>InspireX Color Palette</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+body{margin:0;background:#ECECEF;color:#0A0F3C;font-family:Geist,'Helvetica Neue',Arial,sans-serif;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:#3D2FA8;text-decoration:none}a:hover{color:#6B5BE0}
+::selection{background:#C5C1FF}
+:focus-visible{outline:2px solid #6B5BE0;outline-offset:2px}
+</style>
+</helmet>
+<div style="min-height:100vh;max-width:1360px;margin:0 auto;padding:clamp(40px,6vw,80px) clamp(20px,3.4vw,48px);display:flex;flex-direction:column;gap:clamp(48px,6vw,80px)">
+
+<header style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px">
+  <div style="display:flex;flex-direction:column;gap:14px;max-width:720px">
+    <span style="font-family:'Geist Mono',monospace;font-size:12px;color:#5B6385">// InspireX brand · Color palette</span>
+    <h1 style="margin:0;font-size:clamp(40px,5.6vw,80px);line-height:.98;font-weight:500;letter-spacing:-.055em">Night navy and violet,<br><span style="color:#9A9CB4">on a cool grey ground.</span></h1>
+  </div>
+  <p style="margin:0;max-width:360px;font-size:15px;line-height:1.6;color:#4A5070">Taken from the v8 homepage. Click any swatch to copy its hex. Contrast figures are WCAG ratios; 4.5 or higher is safe for body text.</p>
+</header>
+
+<section style="display:flex;flex-direction:column;gap:16px">
+  <span style="font-family:'Geist Mono',monospace;font-size:12px;color:#5B6385">// 01 Core</span>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,140px),1fr));gap:12px">
+    <button onClick="{{ copy }}" data-hex="#0B1235" style="min-height:300px;display:flex;flex-direction:column;justify-content:space-between;gap:20px;padding:22px;border:0;border-radius:22px;background:#0B1235;color:#F4F2ED;font:inherit;text-align:left;cursor:pointer;transition:transform .3s ease-out" style-hover="transform:translateY(-4px)">
+      <span style="font-family:'Geist Mono',monospace;font-size:12px;color:#C5C1FF">// Primary · Night</span>
+      <span style="display:flex;flex-direction:column;gap:6px"><span style="font-size:clamp(20px,2vw,26px);line-height:1.1;font-weight:500;letter-spacing:-.04em;text-wrap:balance">Night Navy</span><span style="font-family:'Geist Mono',monospace;font-size:14px">#0B1235</span><span style="font-size:13px;line-height:1.5;color:rgba(244,242,237,.78)">Dark panels, hero horizon, forms, footer cards.</span></span>
+    </button>
+    <button onClick="{{ copy }}" data-hex="#0A0F3C" style="min-height:300px;display:flex;flex-direction:column;justify-content:space-between;gap:20px;padding:22px;border:0;border-radius:22px;background:#0A0F3C;color:#F4F2ED;font:inherit;text-align:left;cursor:pointer;transition:transform .3s ease-out" style-hover="transform:translateY(-4px)">
+      <span style="font-family:'Geist Mono',monospace;font-size:12px;color:#C5C1FF">// Primary · Ink</span>
+      <span style="display:flex;flex-direction:column;gap:6px"><span style="font-size:clamp(20px,2vw,26px);line-height:1.1;font-weight:500;letter-spacing:-.04em;text-wrap:balance">Ink Navy</span><span style="font-family:'Geist Mono',monospace;font-size:14px">#0A0F3C</span><span style="font-size:13px;line-height:1.5;color:rgba(244,242,237,.78)">Headlines, body text, dark buttons. 18.3 : 1 on white.</span></span>
+    </button>
+    <button onClick="{{ copy }}" data-hex="#6B5BE0" style="min-height:300px;display:flex;flex-direction:column;justify-content:space-between;gap:20px;padding:22px;border:0;border-radius:22px;background:#6B5BE0;color:#FFFFFF;font:inherit;text-align:left;cursor:pointer;transition:transform .3s ease-out" style-hover="transform:translateY(-4px)">
+      <span style="font-family:'Geist Mono',monospace;font-size:12px;color:rgba(255,255,255,.85)">// Accent</span>
+      <span style="display:flex;flex-direction:column;gap:6px"><span style="font-size:clamp(20px,2vw,26px);line-height:1.1;font-weight:500;letter-spacing:-.04em;text-wrap:balance">InspireX Violet</span><span style="font-family:'Geist Mono',monospace;font-size:14px">#6B5BE0</span><span style="font-size:13px;line-height:1.5;color:rgba(255,255,255,.88)">Links, hover states, active items, highlights. 5.0 : 1 on white.</span></span>
+    </button>
+    <button onClick="{{ copy }}" data-hex="#ECECEF" style="min-height:300px;display:flex;flex-direction:column;justify-content:space-between;gap:20px;padding:22px;border:1px solid rgba(10,15,60,.1);border-radius:22px;background:#ECECEF;color:#0A0F3C;font:inherit;text-align:left;cursor:pointer;transition:transform .3s ease-out" style-hover="transform:translateY(-4px)">
+      <span style="font-family:'Geist Mono',monospace;font-size:12px;color:#5B6385">// Ground</span>
+      <span style="display:flex;flex-direction:column;gap:6px"><span style="font-size:clamp(20px,2vw,26px);line-height:1.1;font-weight:500;letter-spacing:-.04em;text-wrap:balance">Cool Grey</span><span style="font-family:'Geist Mono',monospace;font-size:14px">#ECECEF</span><span style="font-size:13px;line-height:1.5;color:#4A5070">Page background behind every section.</span></span>
+    </button>
+    <button onClick="{{ copy }}" data-hex="#FFFFFF" style="min-height:300px;display:flex;flex-direction:column;justify-content:space-between;gap:20px;padding:22px;border:1px solid rgba(10,15,60,.1);border-radius:22px;background:#FFFFFF;color:#0A0F3C;font:inherit;text-align:left;cursor:pointer;transition:transform .3s ease-out" style-hover="transform:translateY(-4px)">
+      <span style="font-family:'Geist Mono',monospace;font-size:12px;color:#5B6385">// Surface</span>
+      <span style="display:flex;flex-direction:column;gap:6px"><span style="font-size:clamp(20px,2vw,26px);line-height:1.1;font-weight:500;letter-spacing:-.04em;text-wrap:balance">White</span><span style="font-family:'Geist Mono',monospace;font-size:14px">#FFFFFF</span><span style="font-size:13px;line-height:1.5;color:#4A5070">Cards, section panels, the floating nav.</span></span>
+    </button>
+  </div>
+</section>
+
+<section style="display:flex;flex-direction:column;gap:16px">
+  <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px"><span style="font-family:'Geist Mono',monospace;font-size:12px;color:#5B6385">// 02 Violet ramp</span><span style="font-size:13px;color:#5B6385">Contrast on white · on Night</span></div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,160px),1fr));gap:4px;padding:4px;border-radius:22px;background:#FFFFFF">
+    <button onClick="{{ copy }}" data-hex="#3D2FA8" style="min-height:200px;display:flex;flex-direction:column;justify-content:flex-end;gap:4px;padding:16px;border:0;border-radius:18px;background:#3D2FA8;color:#FFFFFF;font:inherit;text-align:left;cursor:pointer"><span style="font-size:16px;font-weight:500">Deep Violet</span><span style="font-family:'Geist Mono',monospace;font-size:12px">#3D2FA8 · 9.7 · 1.9</span><span style="font-size:12px;color:rgba(255,255,255,.82)">Text on lilac fills, gradient end</span></button>
+    <button onClick="{{ copy }}" data-hex="#6B5BE0" style="min-height:200px;display:flex;flex-direction:column;justify-content:flex-end;gap:4px;padding:16px;border:0;border-radius:18px;background:#6B5BE0;color:#FFFFFF;font:inherit;text-align:left;cursor:pointer"><span style="font-size:16px;font-weight:500">Violet</span><span style="font-family:'Geist Mono',monospace;font-size:12px">#6B5BE0 · 5.0 · 3.6</span><span style="font-size:12px;color:rgba(255,255,255,.85)">Base accent</span></button>
+    <button onClick="{{ copy }}" data-hex="#A29BFE" style="min-height:200px;display:flex;flex-direction:column;justify-content:flex-end;gap:4px;padding:16px;border:0;border-radius:18px;background:#A29BFE;color:#0A0F3C;font:inherit;text-align:left;cursor:pointer"><span style="font-size:16px;font-weight:500">Lavender</span><span style="font-family:'Geist Mono',monospace;font-size:12px">#A29BFE · 2.4 · 7.5</span><span style="font-size:12px;color:#1B2156">Labels and focus on dark</span></button>
+    <button onClick="{{ copy }}" data-hex="#C5C1FF" style="min-height:200px;display:flex;flex-direction:column;justify-content:flex-end;gap:4px;padding:16px;border:0;border-radius:18px;background:#C5C1FF;color:#0A0F3C;font:inherit;text-align:left;cursor:pointer"><span style="font-size:16px;font-weight:500">Lilac</span><span style="font-family:'Geist Mono',monospace;font-size:12px">#C5C1FF · 1.7 · 10.8</span><span style="font-size:12px;color:#1B2156">Highlights on Night, selection</span></button>
+    <button onClick="{{ copy }}" data-hex="#E7E4FF" style="min-height:200px;display:flex;flex-direction:column;justify-content:flex-end;gap:4px;padding:16px;border:0;border-radius:18px;background:#E7E4FF;color:#0A0F3C;font:inherit;text-align:left;cursor:pointer"><span style="font-size:16px;font-weight:500">Mist</span><span style="font-family:'Geist Mono',monospace;font-size:12px">#E7E4FF · 1.2 · 14.7</span><span style="font-size:12px;color:#3D2FA8">Tinted cards, button hover</span></button>
+  </div>
+</section>
+
+<section style="display:flex;flex-direction:column;gap:16px">
+  <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px"><span style="font-family:'Geist Mono',monospace;font-size:12px;color:#5B6385">// 03 Neutrals</span><span style="font-size:13px;color:#5B6385">Contrast on white · on Cool Grey</span></div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,110px),1fr));gap:4px;padding:4px;border-radius:22px;background:#FFFFFF">
+    <button onClick="{{ copy }}" data-hex="#1B2156" style="min-height:170px;display:flex;flex-direction:column;justify-content:flex-end;gap:4px;padding:16px;border:0;border-radius:18px;background:#1B2156;color:#FFFFFF;font:inherit;text-align:left;cursor:pointer"><span style="font-size:16px;font-weight:500">Midnight</span><span style="font-family:'Geist Mono',monospace;font-size:12px">#1B2156 · 15.0 · 12.7</span><span style="font-size:12px;color:rgba(255,255,255,.78)">Gradient step, inputs on dark</span></button>
+    <button onClick="{{ copy }}" data-hex="#3A4066" style="min-height:170px;display:flex;flex-direction:column;justify-content:flex-end;gap:4px;padding:16px;border:0;border-radius:18px;background:#3A4066;color:#FFFFFF;font:inherit;text-align:left;cursor:pointer"><span style="font-size:16px;font-weight:500">Slate 700</span><span style="font-family:'Geist Mono',monospace;font-size:12px">#3A4066 · 10.0 · 8.5</span><span style="font-size:12px;color:rgba(255,255,255,.8)">Lead paragraphs</span></button>
+    <button onClick="{{ copy }}" data-hex="#4A5070" style="min-height:170px;display:flex;flex-direction:column;justify-content:flex-end;gap:4px;padding:16px;border:0;border-radius:18px;background:#4A5070;color:#FFFFFF;font:inherit;text-align:left;cursor:pointer"><span style="font-size:16px;font-weight:500">Slate 600</span><span style="font-family:'Geist Mono',monospace;font-size:12px">#4A5070 · 7.9 · 6.7</span><span style="font-size:12px;color:rgba(255,255,255,.82)">Body copy</span></button>
+    <button onClick="{{ copy }}" data-hex="#5B6385" style="min-height:170px;display:flex;flex-direction:column;justify-content:flex-end;gap:4px;padding:16px;border:0;border-radius:18px;background:#5B6385;color:#FFFFFF;font:inherit;text-align:left;cursor:pointer"><span style="font-size:16px;font-weight:500">Slate 500</span><span style="font-family:'Geist Mono',monospace;font-size:12px">#5B6385 · 5.9 · 5.0</span><span style="font-size:12px;color:rgba(255,255,255,.85)">Captions, // labels</span></button>
+    <button onClick="{{ copy }}" data-hex="#9A9CB4" style="min-height:170px;display:flex;flex-direction:column;justify-content:flex-end;gap:4px;padding:16px;border:0;border-radius:18px;background:#9A9CB4;color:#0A0F3C;font:inherit;text-align:left;cursor:pointer"><span style="font-size:16px;font-weight:500">Slate 300</span><span style="font-family:'Geist Mono',monospace;font-size:12px">#9A9CB4 · 2.7 · 2.3</span><span style="font-size:12px;color:#1B2156">Second tone of headlines only</span></button>
+    <button onClick="{{ copy }}" data-hex="#BDBECE" style="min-height:170px;display:flex;flex-direction:column;justify-content:flex-end;gap:4px;padding:16px;border:0;border-radius:18px;background:#BDBECE;color:#0A0F3C;font:inherit;text-align:left;cursor:pointer"><span style="font-size:16px;font-weight:500">Slate 200</span><span style="font-family:'Geist Mono',monospace;font-size:12px">#BDBECE · 1.8 · 1.6</span><span style="font-size:12px;color:#1B2156">Unlit statement words</span></button>
+    <button onClick="{{ copy }}" data-hex="#F4F2ED" style="min-height:170px;display:flex;flex-direction:column;justify-content:flex-end;gap:4px;padding:16px;border:1px solid rgba(10,15,60,.08);border-radius:18px;background:#F4F2ED;color:#0A0F3C;font:inherit;text-align:left;cursor:pointer"><span style="font-size:16px;font-weight:500">Paper</span><span style="font-family:'Geist Mono',monospace;font-size:12px">#F4F2ED · on Night 16.3</span><span style="font-size:12px;color:#4A5070">Text on dark panels</span></button>
+  </div>
+</section>
+
+<section style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:12px">
+  <div style="display:flex;flex-direction:column;gap:16px">
+    <span style="font-family:'Geist Mono',monospace;font-size:12px;color:#5B6385">// 04 Glow accents</span>
+    <div style="flex:1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;padding:4px;border-radius:22px;background:#0B1235">
+      <button onClick="{{ copy }}" data-hex="#3FB7F5" style="min-height:200px;display:flex;flex-direction:column;justify-content:flex-end;gap:4px;padding:16px;border:0;border-radius:18px;background:radial-gradient(circle at 50% 30%,#3FB7F5,rgba(63,183,245,.15) 75%);color:#F4F2ED;font:inherit;text-align:left;cursor:pointer"><span style="font-size:16px;font-weight:500">Sky</span><span style="font-family:'Geist Mono',monospace;font-size:12px">#3FB7F5</span></button>
+      <button onClick="{{ copy }}" data-hex="#FFB3B5" style="min-height:200px;display:flex;flex-direction:column;justify-content:flex-end;gap:4px;padding:16px;border:0;border-radius:18px;background:radial-gradient(circle at 50% 30%,#FFB3B5,rgba(255,179,181,.15) 75%);color:#F4F2ED;font:inherit;text-align:left;cursor:pointer"><span style="font-size:16px;font-weight:500">Rose</span><span style="font-family:'Geist Mono',monospace;font-size:12px">#FFB3B5</span></button>
+      <button onClick="{{ copy }}" data-hex="#B5E6B5" style="min-height:200px;display:flex;flex-direction:column;justify-content:flex-end;gap:4px;padding:16px;border:0;border-radius:18px;background:radial-gradient(circle at 50% 30%,#B5E6B5,rgba(181,230,181,.15) 75%);color:#F4F2ED;font:inherit;text-align:left;cursor:pointer"><span style="font-size:16px;font-weight:500">Mint</span><span style="font-family:'Geist Mono',monospace;font-size:12px">#B5E6B5</span></button>
+    </div>
+    <p style="margin:0;font-size:13px;line-height:1.5;color:#4A5070">Soft blurred glows on dark panels and the butterfly. Never as text or flat fills on light grounds.</p>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:16px">
+    <span style="font-family:'Geist Mono',monospace;font-size:12px;color:#5B6385">// 05 Gradients</span>
+    <div style="flex:1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px">
+      <button onClick="{{ copy }}" data-hex="linear-gradient(160deg,#6B5BE0 0%,#3D2FA8 100%)" style="min-height:200px;display:flex;flex-direction:column;justify-content:flex-end;gap:4px;padding:16px;border:0;border-radius:22px;background:linear-gradient(160deg,#6B5BE0 0%,#3D2FA8 100%);color:#FFFFFF;font:inherit;text-align:left;cursor:pointer"><span style="font-size:16px;font-weight:500">Violet card</span><span style="font-family:'Geist Mono',monospace;font-size:12px">#6B5BE0 → #3D2FA8</span></button>
+      <button onClick="{{ copy }}" data-hex="linear-gradient(180deg,#ECECEF 0%,#ECECEF 34%,#D9D6F2 52%,#6E68B8 70%,#1B2156 84%,#0B1235 100%)" style="min-height:200px;display:flex;flex-direction:column;justify-content:flex-end;gap:4px;padding:16px;border:0;border-radius:22px;background:linear-gradient(180deg,#ECECEF 0%,#D9D6F2 30%,#6E68B8 58%,#1B2156 80%,#0B1235 100%);color:#F4F2ED;font:inherit;text-align:left;cursor:pointer"><span style="font-size:16px;font-weight:500">Hero sky</span><span style="font-family:'Geist Mono',monospace;font-size:12px">#ECECEF → #D9D6F2 → #6E68B8 → #0B1235</span></button>
+    </div>
+    <p style="margin:0;font-size:13px;line-height:1.5;color:#4A5070">The only two gradients on the site. Click to copy the full CSS.</p>
+  </div>
+</section>
+
+<section style="display:flex;flex-direction:column;gap:16px">
+  <span style="font-family:'Geist Mono',monospace;font-size:12px;color:#5B6385">// 06 Proportion</span>
+  <div style="display:flex;height:72px;border-radius:18px;overflow:hidden">
+    <div style="flex:42;background:#ECECEF;border:1px solid rgba(10,15,60,.1);border-right:0;border-radius:18px 0 0 18px"></div>
+    <div style="flex:26;background:#FFFFFF"></div>
+    <div style="flex:20;background:#0B1235"></div>
+    <div style="flex:8;background:#6B5BE0"></div>
+    <div style="flex:3;background:#C5C1FF"></div>
+    <div style="flex:1;background:#3FB7F5"></div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:8px 16px;font-size:13px;color:#4A5070">
+    <span><strong style="color:#0A0F3C;font-weight:600">42%</strong> Cool Grey ground</span>
+    <span><strong style="color:#0A0F3C;font-weight:600">26%</strong> White surfaces</span>
+    <span><strong style="color:#0A0F3C;font-weight:600">20%</strong> Night Navy panels</span>
+    <span><strong style="color:#0A0F3C;font-weight:600">8%</strong> Violet accent</span>
+    <span><strong style="color:#0A0F3C;font-weight:600">4%</strong> Lilac and glows</span>
+  </div>
+</section>
+
+<section style="display:flex;flex-direction:column;gap:16px">
+  <span style="font-family:'Geist Mono',monospace;font-size:12px;color:#5B6385">// 07 Approved pairings</span>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:12px">
+    <div style="display:flex;flex-direction:column;justify-content:space-between;gap:24px;min-height:160px;padding:20px;border-radius:20px;background:#FFFFFF"><span style="font-size:22px;font-weight:500;letter-spacing:-.03em;color:#0A0F3C">Ink on White</span><span style="font-family:'Geist Mono',monospace;font-size:12px;color:#5B6385">18.3 : 1 · All text</span></div>
+    <div style="display:flex;flex-direction:column;justify-content:space-between;gap:24px;min-height:160px;padding:20px;border-radius:20px;background:#0B1235"><span style="font-size:22px;font-weight:500;letter-spacing:-.03em;color:#F4F2ED">Paper on Night</span><span style="font-family:'Geist Mono',monospace;font-size:12px;color:#C5C1FF">16.3 : 1 · All text</span></div>
+    <div style="display:flex;flex-direction:column;justify-content:space-between;gap:24px;min-height:160px;padding:20px;border-radius:20px;background:#E7E4FF"><span style="font-size:22px;font-weight:500;letter-spacing:-.03em;color:#3D2FA8">Deep Violet on Mist</span><span style="font-family:'Geist Mono',monospace;font-size:12px;color:#3D2FA8">8.0 : 1 · All text</span></div>
+    <div style="display:flex;flex-direction:column;justify-content:space-between;gap:24px;min-height:160px;padding:20px;border-radius:20px;background:#FFFFFF"><span style="font-size:22px;font-weight:500;letter-spacing:-.03em;color:#6B5BE0">Violet on White</span><span style="font-family:'Geist Mono',monospace;font-size:12px;color:#5B6385">5.0 : 1 · Links, short text</span></div>
+  </div>
+</section>
+
+<sc-if value="{{ showToast }}">
+  <div role="status" style="position:fixed;left:50%;bottom:24px;transform:translateX(-50%);padding:12px 18px;border-radius:14px;background:#0A0F3C;color:#F4F2ED;font-family:'Geist Mono',monospace;font-size:13px;box-shadow:0 20px 40px -20px rgba(11,18,53,.6)">Copied {{ toast }}</div>
+</sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { toast: '' };
+  componentWillUnmount() { clearTimeout(this.t); }
+  renderVals() {
+    const { toast } = this.state;
+    return {
+      toast: toast.length > 24 ? 'CSS gradient' : toast,
+      showToast: !!toast,
+      copy: (e) => {
+        const hex = e.currentTarget.getAttribute('data-hex');
+        const done = () => { this.setState({ toast: hex }); clearTimeout(this.t); this.t = setTimeout(() => this.setState({ toast: '' }), 1500); };
+        if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(hex).then(done, done); else done();
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Blog · InspireX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<style>body{margin:0;background:#EEF0F3;color:#121418;font-family:Geist,'Helvetica Neue',Arial,sans-serif;-webkit-font-smoothing:antialiased}*{box-sizing:border-box}a{color:inherit;text-decoration:none}a:hover{color:#0175A9}::selection{background:#80DCFE}:focus-visible{outline:2px solid #0175A9;outline-offset:2px}@keyframes ixRise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}</style>
+<script src="ix-data.js"></script>
+</helmet>
+<div id="top" style="min-height:100vh;background:#EEF0F3;overflow-x:hidden">
+<dc-import name="IXHeader" active="blog" hint-size="100%,0px"></dc-import>
+
+<dc-import name="IXHero" kicker="// Blog" line1="News, case studies" line2="and insights." intro="What we're working on, what it achieved, and what we've learned." shape="wave" cta="Read case studies" ctaHref="Blog.dc.html?c=case-studies" cta2="Book a call" cta2Href="Contact.dc.html" f1v="4" f1l="news stories" f2v="8" f2l="case studies" f3v="25+" f3l="awards won" hint-size="100%,720px"></dc-import>
+<section data-screen-label="Featured" style="max-width:1360px;margin:0 auto;padding:0 clamp(20px,3.4vw,48px) clamp(40px,6vw,64px);display:flex;flex-direction:column;gap:28px">
+  <div style="position:relative;overflow:hidden;display:flex;flex-wrap:wrap;align-items:center;gap:28px 48px;padding:clamp(24px,3.4vw,44px);border-radius:28px;background:#02061E;color:#FFFFFF">
+    <div style="position:absolute;right:-120px;top:-160px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(0,185,254,.45),rgba(0,185,254,0) 70%);pointer-events:none"></div>
+    <img src="assets/award-slim.webp" alt="SLIM Digis trophies" style="position:relative;width:120px;height:auto;display:block">
+    <div style="position:relative;flex:1 1 380px;display:flex;flex-direction:column;gap:12px"><span style="font-family:'Geist Mono',monospace;font-size:12px;color:#80DCFE">// Featured · Awards · 2024</span><h2 style="margin:0;font-size:clamp(26px,3vw,42px);line-height:1.05;font-weight:500;letter-spacing:-.045em;text-wrap:balance">InspireX wins both education awards at SLIM Digis 2024</h2><p style="margin:0;max-width:560px;font-size:15px;line-height:1.6;color:rgba(255,255,255,.78)">Best Digital Marketing Campaign and Best Use of AI in Marketing, in the education category.</p></div>
+  </div>
+  <div role="tablist" style="align-self:flex-start;display:flex;flex-wrap:wrap;gap:4px;padding:4px;border-radius:14px;background:#FFFFFF">
+    <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="4"><button role="tab" aria-selected="{{ t.sel }}" onClick="{{ t.pick }}" style="min-height:42px;padding:0 18px;border:0;border-radius:10px;background:{{ t.bg }};color:{{ t.fg }};font:inherit;font-size:14px;font-weight:500;cursor:pointer">{{ t.label }} <span style="opacity:.6">{{ t.n }}</span></button></sc-for>
+  </div>
+</section>
+
+<section data-screen-label="Posts" style="max-width:1360px;margin:0 auto;padding:0 clamp(20px,3.4vw,48px) clamp(56px,8vw,104px)">
+  <sc-if value="{{ hasPosts }}" hint-placeholder-val="{{ true }}">
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:12px">
+      <sc-for list="{{ posts }}" as="p" hint-placeholder-count="6">
+        <div style="display:flex;flex-direction:column;gap:18px;padding:8px 8px 24px;border-radius:22px;background:{{ p.bg }};color:{{ p.fg }};transition:transform .35s ease-out" style-hover="transform:translateY(-4px)">
+          <div style="aspect-ratio:16/10;border-radius:16px;overflow:hidden;background:{{ p.imgBg }}"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="{{ p.img }}" placeholder="{{ p.imgAlt }}" shape="rect" hint-size="100%,100%"></x-import></div>
+          <div style="flex:1;display:flex;flex-direction:column;justify-content:space-between;gap:20px;padding:0 16px">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:12px"><span style="padding:5px 11px;border-radius:999px;background:{{ p.chip }};font-size:12px;font-weight:500">{{ p.cat }}</span><span style="font-family:'Geist Mono',monospace;font-size:11px;color:{{ p.mute }}">{{ p.tag }}</span></div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <sc-if value="{{ p.isCase }}"><span style="font-size:clamp(44px,4vw,60px);line-height:1;font-weight:500;letter-spacing:-.06em;color:{{ p.num }}">{{ p.metric }}</span></sc-if>
+            <h2 style="margin:0;font-size:20px;line-height:1.25;font-weight:500;letter-spacing:-.02em;text-wrap:pretty">{{ p.title }}</h2>
+            <p style="margin:0;font-size:14px;line-height:1.55;color:{{ p.mute }}">{{ p.desc }}</p>
+          </div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </sc-if>
+  <sc-if value="{{ empty }}">
+    <div style="display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:clamp(28px,4vw,48px);border-radius:24px;border:1px dashed rgba(18,20,24,.2)">
+      <span style="font-size:22px;font-weight:500;letter-spacing:-.03em">No insights published yet.</span>
+      <span style="font-size:14px;color:#5C5F64">Our first articles on AI, data and growth are on the way.</span>
+    </div>
+  </sc-if>
+</section>
+
+<dc-import name="IXCta" hint-size="100%,380px"></dc-import>
+<dc-import name="IXFooter" hint-size="100%,560px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const TABS = [['', 'All'], ['news', 'News'], ['case-studies', 'Case studies'], ['insights', 'Insights']];
+class Component extends DCLogic {
+  state = { ix: 0, c: '' };
+  componentDidMount() { const t = () => { if (window.IX) this.setState({ ix: 1, c: window.IX.param('c') }); else this.tm = setTimeout(t, 30); }; t(); }
+  componentWillUnmount() { clearTimeout(this.tm); }
+  renderVals() {
+    const D = window.IX;
+    if (!D) return {};
+    const { c } = this.state;
+    const news = D.news.map((n, k) => ({ ...n, img: 'blog-news-' + (k + 1), imgAlt: 'Image for: ' + n.title, imgBg: '#EEF0F3', key: 'news', isCase: false, bg: '#FFFFFF', fg: '#121418', mute: '#5C5F64', chip: '#DBF5FF', num: '#121418' }));
+    const cases = D.results.map((r) => { const s = D.card(r); return { ...s, img: 'blog-case-' + r.client.toLowerCase().replace(/[^a-z0-9]+/g, '-'), imgAlt: r.client + ' case study image', imgBg: r.kind === 'light' ? '#EEF0F3' : 'rgba(255,255,255,.08)', key: 'case-studies', cat: 'Case study', tag: r.ind, isCase: true, title: r.client + ': ' + r.label, desc: r.desc }; });
+    const all = { '': news.concat(cases), news, 'case-studies': cases, insights: [] };
+    const posts = all[c] || all[''];
+    return {
+      tabs: TABS.map(([k, label]) => ({ label, n: (all[k] || []).length, sel: c === k ? 'true' : 'false', bg: c === k ? '#121418' : 'transparent', fg: c === k ? '#FFFFFF' : '#121418', pick: () => this.setState({ c: k }) })),
+      posts, hasPosts: posts.length > 0, empty: posts.length === 0
+    };
+  }
+}
+</script>
+</body>
+</html>

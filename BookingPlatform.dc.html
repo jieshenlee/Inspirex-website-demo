@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Booking Platform · InspireX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<style>body{margin:0;background:#EEF0F3;color:#121418;font-family:Geist,'Helvetica Neue',Arial,sans-serif;-webkit-font-smoothing:antialiased}*{box-sizing:border-box}a{color:inherit;text-decoration:none}a:hover{color:#0175A9}::selection{background:#80DCFE}:focus-visible{outline:2px solid #0175A9;outline-offset:2px}@keyframes ixRise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}</style>
+<script src="ix-data.js"></script>
+</helmet>
+<div id="top" style="min-height:100vh;background:#EEF0F3;overflow-x:hidden">
+<dc-import name="IXHeader" active="products" hint-size="100%,0px"></dc-import>
+
+<dc-import name="IXHero" kicker="// Products / Booking Platform" line1="The engine behind" line2="every template." intro="Bookings, payments, messaging and the dashboard. Pick a template for the look; Booking Platform runs everything behind it." shape="orbit" cta="Browse templates" ctaHref="Templates.dc.html" cta2="Book a call" cta2Href="Contact.dc.html" f1v="4" f1l="core features in one engine" f2v="15" f2l="business types supported" f3v="45" f3l="templates it powers" hint-size="100%,720px"></dc-import>
+
+<section data-screen-label="Capabilities" style="max-width:1360px;margin:0 auto;padding:0 clamp(20px,3.4vw,48px) clamp(56px,8vw,104px)">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:12px">
+    <div style="min-height:260px;display:flex;flex-direction:column;justify-content:space-between;gap:24px;padding:24px;border-radius:22px;background:#02061E;color:#FFFFFF"><span style="font-family:'Geist Mono',monospace;font-size:12px;color:#80DCFE">// 01</span><div style="display:flex;flex-direction:column;gap:10px"><h2 style="margin:0;font-size:28px;font-weight:500;letter-spacing:-.04em">Bookings</h2><p style="margin:0;font-size:14px;line-height:1.55;color:rgba(255,255,255,.78)">Appointments, classes, tables, tours and courses, with live availability.</p></div></div>
+    <div style="min-height:260px;display:flex;flex-direction:column;justify-content:space-between;gap:24px;padding:24px;border-radius:22px;background:#FFFFFF"><span style="font-family:'Geist Mono',monospace;font-size:12px;color:#5C5F64">// 02</span><div style="display:flex;flex-direction:column;gap:10px"><h2 style="margin:0;font-size:28px;font-weight:500;letter-spacing:-.04em">Payments</h2><p style="margin:0;font-size:14px;line-height:1.55;color:#5C5F64">Deposits and full payments online, or pay at the venue.</p></div></div>
+    <div style="min-height:260px;display:flex;flex-direction:column;justify-content:space-between;gap:24px;padding:24px;border-radius:22px;background:#FFFFFF"><span style="font-family:'Geist Mono',monospace;font-size:12px;color:#5C5F64">// 03</span><div style="display:flex;flex-direction:column;gap:10px"><h2 style="margin:0;font-size:28px;font-weight:500;letter-spacing:-.04em">Messaging</h2><p style="margin:0;font-size:14px;line-height:1.55;color:#5C5F64">Confirmations and reminders sent to customers automatically.</p></div></div>
+    <div style="min-height:260px;display:flex;flex-direction:column;justify-content:space-between;gap:24px;padding:24px;border-radius:22px;background:linear-gradient(160deg,#0175A9 0%,#01517C 100%);color:#FFFFFF"><span style="font-family:'Geist Mono',monospace;font-size:12px;color:rgba(255,255,255,.85)">// 04</span><div style="display:flex;flex-direction:column;gap:10px"><h2 style="margin:0;font-size:28px;font-weight:500;letter-spacing:-.04em">Dashboard</h2><p style="margin:0;font-size:14px;line-height:1.55;color:rgba(255,255,255,.88)">Every booking, payment and customer in one place.</p></div></div>
+  </div>
+</section>
+
+<section data-screen-label="From first click" style="max-width:1360px;margin:0 auto;padding:clamp(64px,9vw,120px) clamp(20px,3.4vw,48px) 0;display:flex;flex-direction:column;gap:32px">
+  <div style="display:flex;flex-direction:column;gap:14px"><span style="font-family:'Geist Mono',monospace;font-size:12px;color:#5C5F64">// How a booking flows</span><h2 style="margin:0;font-size:clamp(34px,4.8vw,68px);line-height:1;font-weight:500;letter-spacing:-.055em">From first click<br><span style="color:#757575">to dashboard.</span></h2></div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:12px">
+    <div style="min-height:220px;display:flex;flex-direction:column;justify-content:space-between;gap:24px;padding:24px;border-radius:22px;background:#00B9FE;color:#02061E"><span style="font-family:'Geist Mono',monospace;font-size:12px;color:#5C5F64">// 01</span><div style="display:flex;flex-direction:column;gap:10px"><h3 style="margin:0;font-size:clamp(20px,1.9vw,25px);line-height:1.1;font-weight:500;letter-spacing:-.03em">Your customer books</h3><p style="margin:0;font-size:14px;line-height:1.55;color:#5C5F64">They pick a service and a time on your template website.</p></div></div>
+    <div style="min-height:220px;display:flex;flex-direction:column;justify-content:space-between;gap:24px;padding:24px;border-radius:22px;background:#00B9FE;color:#02061E"><span style="font-family:'Geist Mono',monospace;font-size:12px;color:#5C5F64">// 02</span><div style="display:flex;flex-direction:column;gap:10px"><h3 style="margin:0;font-size:clamp(20px,1.9vw,25px);line-height:1.1;font-weight:500;letter-spacing:-.03em">They pay</h3><p style="margin:0;font-size:14px;line-height:1.55;color:#5C5F64">A deposit or full payment online, or pay at the venue.</p></div></div>
+    <div style="min-height:220px;display:flex;flex-direction:column;justify-content:space-between;gap:24px;padding:24px;border-radius:22px;background:#00B9FE;color:#02061E"><span style="font-family:'Geist Mono',monospace;font-size:12px;color:#5C5F64">// 03</span><div style="display:flex;flex-direction:column;gap:10px"><h3 style="margin:0;font-size:clamp(20px,1.9vw,25px);line-height:1.1;font-weight:500;letter-spacing:-.03em">They get reminded</h3><p style="margin:0;font-size:14px;line-height:1.55;color:#5C5F64">Confirmation and reminder messages go out automatically.</p></div></div>
+    <div style="min-height:220px;display:flex;flex-direction:column;justify-content:space-between;gap:24px;padding:24px;border-radius:22px;background:#00B9FE;color:#02061E"><span style="font-family:'Geist Mono',monospace;font-size:12px;color:#5C5F64">// 04</span><div style="display:flex;flex-direction:column;gap:10px"><h3 style="margin:0;font-size:clamp(20px,1.9vw,25px);line-height:1.1;font-weight:500;letter-spacing:-.03em">You see it all</h3><p style="margin:0;font-size:14px;line-height:1.55;color:#5C5F64">The booking and payment land on your dashboard instantly.</p></div></div>
+  </div>
+</section>
+<section data-screen-label="Dashboard" style="max-width:1360px;margin:0 auto;padding:clamp(40px,6vw,72px) clamp(20px,3.4vw,48px) clamp(56px,8vw,104px)">
+  <div style="aspect-ratio:16/8;min-height:260px;border-radius:28px;overflow:hidden;background:#02061E"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="booking-dashboard" placeholder="Booking Platform dashboard screenshot" shape="rect" hint-size="100%,100%"></x-import></div>
+</section>
+<section data-screen-label="Works with templates" style="padding:0 clamp(8px,1.2vw,16px) 12px">
+  <div style="border-radius:32px;background:#FFFFFF;padding:clamp(44px,7vw,96px) clamp(20px,3.4vw,48px)">
+    <div style="max-width:1300px;margin:0 auto;display:flex;flex-direction:column;gap:28px">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px">
+        <div style="display:flex;flex-direction:column;gap:14px"><span style="font-family:'Geist Mono',monospace;font-size:12px;color:#5C5F64">// Works with every template</span><h2 style="margin:0;font-size:clamp(32px,4vw,56px);line-height:1;font-weight:500;letter-spacing:-.05em">15 business types, <span style="color:#757575">one engine.</span></h2></div>
+        <a href="Templates.dc.html" style="display:inline-flex;align-items:center;min-height:46px;padding:0 18px;border-radius:14px;background:#EEF0F3;color:#121418;font-size:14px;font-weight:500" style-hover="background:#DBF5FF;color:#0175A9">Template library →</a>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px">
+        <sc-for list="{{ inds }}" as="i" hint-placeholder-count="15"><a href="{{ i.href }}" style="display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 16px;border-radius:999px;background:#EEF0F3;font-size:14px;font-weight:500;color:#121418" style-hover="background:#DBF5FF;color:#0175A9">{{ i.name }}<span style="font-size:12px;color:#5C5F64">{{ i.action }}</span></a></sc-for>
+      </div>
+    </div>
+  </div>
+</section>
+
+<dc-import name="IXCta" hint-size="100%,380px"></dc-import>
+<dc-import name="IXFooter" hint-size="100%,560px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { ix: 0 };
+  componentDidMount() { const t = () => { if (window.IX) this.setState({ ix: 1 }); else this.tm = setTimeout(t, 30); }; t(); }
+  componentWillUnmount() { clearTimeout(this.tm); }
+  renderVals() { const D = window.IX; return D ? { inds: D.industries.map((i) => ({ name: i.name, action: i.action, href: 'Industry.dc.html?i=' + i.slug })) } : {}; }
+}
+</script>
+</body>
+</html>

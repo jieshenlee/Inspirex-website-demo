@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Products · InspireX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<style>body{margin:0;background:#EEF0F3;color:#121418;font-family:Geist,'Helvetica Neue',Arial,sans-serif;-webkit-font-smoothing:antialiased}*{box-sizing:border-box}a{color:inherit;text-decoration:none}a:hover{color:#0175A9}::selection{background:#80DCFE}:focus-visible{outline:2px solid #0175A9;outline-offset:2px}@keyframes ixRise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}</style>
+<script src="ix-data.js"></script>
+</helmet>
+<div id="top" style="min-height:100vh;background:#EEF0F3;overflow-x:hidden">
+<dc-import name="IXHeader" active="products" hint-size="100%,0px"></dc-import>
+
+<dc-import name="IXHero" kicker="// Products" line1="Products you can" line2="start with today." intro="Three products built by the InspireX team. Templates and Booking Platform work together; Mortgage GPT stands on its own." shape="grid" cta="Browse templates" ctaHref="Templates.dc.html" cta2="Book a call" cta2Href="Contact.dc.html" f1v="3" f1l="products" f2v="15" f2l="business types with templates" f3v="45" f3l="website templates" hint-size="100%,720px"></dc-import>
+
+<section data-screen-label="Product cards" style="max-width:1360px;margin:0 auto;padding:0 clamp(20px,3.4vw,48px);display:flex;flex-wrap:wrap;gap:12px">
+  <a href="Templates.dc.html" style="flex:2 1 520px;min-width:0;min-height:clamp(320px,34vw,440px);display:flex;flex-direction:column;justify-content:space-between;gap:28px;padding:clamp(22px,3vw,36px);border-radius:26px;background:#00B9FE;color:#02061E;transition:transform .35s ease-out" style-hover="transform:translateY(-4px);color:#121418">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px"><span style="font-family:'Geist Mono',monospace;font-size:12px;color:#5C5F64">// 01 Templates</span><span style="width:40px;height:40px;border-radius:12px;background:#EEF0F3;display:flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px">
+      <sc-for list="{{ groups }}" as="g" hint-placeholder-count="7"><span style="padding:8px 14px;border-radius:999px;background:#EEF0F3;font-size:13px;font-weight:500">{{ g }}</span></sc-for>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px"><h2 style="margin:0;font-size:clamp(32px,4vw,56px);line-height:1;font-weight:500;letter-spacing:-.05em">Templates</h2><p style="margin:0;max-width:520px;font-size:15px;line-height:1.6;color:#5C5F64">Website designs for 15 business types. Every one connects to live booking, payments and a dashboard.</p></div>
+  </a>
+  <div style="flex:1 1 300px;min-width:0;display:flex;flex-wrap:wrap;gap:12px">
+    <a href="BookingPlatform.dc.html" style="flex:1 1 260px;min-width:0;min-height:214px;display:flex;flex-direction:column;justify-content:space-between;gap:24px;padding:24px;border-radius:26px;background:linear-gradient(160deg,#0175A9 0%,#01517C 100%);color:#FFFFFF;transition:transform .35s ease-out" style-hover="transform:translateY(-4px);color:#FFFFFF">
+      <span style="font-family:'Geist Mono',monospace;font-size:12px;color:rgba(255,255,255,.85)">// 02 Booking Platform</span>
+      <div style="display:flex;flex-direction:column;gap:10px"><h2 style="margin:0;font-size:clamp(26px,2.6vw,34px);line-height:1.02;font-weight:500;letter-spacing:-.045em">Booking Platform</h2><p style="margin:0;font-size:14px;line-height:1.55;color:rgba(255,255,255,.88)">The engine behind every template: bookings, payments, messaging and the dashboard.</p></div>
+    </a>
+    <a href="MortgageGPT.dc.html" style="flex:1 1 260px;min-width:0;min-height:214px;display:flex;flex-direction:column;justify-content:space-between;gap:24px;padding:24px;border-radius:26px;background:#02061E;color:#FFFFFF;transition:transform .35s ease-out" style-hover="transform:translateY(-4px);color:#FFFFFF">
+      <span style="font-family:'Geist Mono',monospace;font-size:12px;color:#80DCFE">// 03 Mortgage GPT</span>
+      <div style="display:flex;flex-direction:column;gap:10px"><h2 style="margin:0;font-size:clamp(26px,2.6vw,34px);line-height:1.02;font-weight:500;letter-spacing:-.045em">Mortgage GPT</h2><p style="margin:0;font-size:14px;line-height:1.55;color:rgba(255,255,255,.78)">An AI assistant for mortgage enquiries.</p></div>
+    </a>
+  </div>
+</section>
+
+<section data-screen-label="How they relate" style="max-width:1360px;margin:0 auto;padding:clamp(64px,9vw,120px) clamp(20px,3.4vw,48px);display:flex;flex-direction:column;gap:32px">
+  <div style="display:flex;flex-direction:column;gap:14px"><span style="font-family:'Geist Mono',monospace;font-size:12px;color:#5C5F64">// How they fit together</span><h2 style="margin:0;font-size:clamp(32px,4vw,56px);line-height:1;font-weight:500;letter-spacing:-.05em">The design, <span style="color:#757575">and the engine behind it.</span></h2></div>
+  <div style="display:flex;flex-wrap:wrap;align-items:stretch;gap:12px">
+    <div style="flex:1 1 280px;display:flex;flex-direction:column;gap:12px;padding:24px;border-radius:22px;border:1px solid rgba(18,20,24,.12)"><span style="font-family:'Geist Mono',monospace;font-size:12px;color:#5C5F64">// Templates</span><span style="font-size:22px;font-weight:500;letter-spacing:-.03em">The website a business starts from</span><span style="font-size:14px;line-height:1.55;color:#5C5F64">Pick an industry, preview three designs, start with one.</span></div>
+    <div style="flex:0 0 auto;display:flex;align-items:center;justify-content:center;padding:0 8px;font-size:28px;color:#0175A9">⇄</div>
+    <div style="flex:1 1 280px;display:flex;flex-direction:column;gap:12px;padding:24px;border-radius:22px;background:#02061E;color:#FFFFFF"><span style="font-family:'Geist Mono',monospace;font-size:12px;color:#80DCFE">// Booking Platform</span><span style="font-size:22px;font-weight:500;letter-spacing:-.03em">The engine that runs it</span><span style="font-size:14px;line-height:1.55;color:rgba(255,255,255,.78)">Bookings, payments, messaging and one dashboard for every template.</span></div>
+  </div>
+</section>
+
+<section data-screen-label="Pick your industry" style="padding:0 clamp(8px,1.2vw,16px)">
+  <div style="border-radius:32px;background:#FFFFFF;padding:clamp(44px,7vw,96px) clamp(20px,3.4vw,48px)">
+    <div style="max-width:1300px;margin:0 auto;display:flex;flex-direction:column;gap:32px">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px"><div style="display:flex;flex-direction:column;gap:14px"><span style="font-family:'Geist Mono',monospace;font-size:12px;color:#5C5F64">// Templates by industry</span><h2 style="margin:0;font-size:clamp(34px,4.8vw,68px);line-height:1;font-weight:500;letter-spacing:-.055em">Pick your industry,<br><span style="color:#757575">see three designs.</span></h2></div><a href="Templates.dc.html" style="display:inline-flex;align-items:center;min-height:46px;padding:0 18px;border-radius:14px;background:#EEF0F3;color:#121418;font-size:14px;font-weight:500" style-hover="background:#DBF5FF;color:#0175A9">All 45 templates →</a></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:12px">
+        <sc-for list="{{ groupCards }}" as="g" hint-placeholder-count="7">
+          <div style="display:flex;flex-direction:column;gap:14px;padding:22px;border-radius:20px;background:#EEF0F3"><span style="font-family:'Geist Mono',monospace;font-size:12px;color:#5C5F64">// {{ g.name }}</span><div style="display:flex;flex-direction:column;gap:4px"><sc-for list="{{ g.items }}" as="it" hint-placeholder-count="3"><a href="{{ it.href }}" style="display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:44px;padding:0 12px;border-radius:12px;background:#FFFFFF;font-size:14px;font-weight:500;color:#121418" style-hover="background:#DBF5FF;color:#0175A9"><span>{{ it.name }}</span><span>→</span></a></sc-for></div></div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+</section>
+<div style="height:clamp(56px,8vw,104px)"></div>
+<dc-import name="IXCta" hint-size="100%,380px"></dc-import>
+<dc-import name="IXFooter" hint-size="100%,560px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { ix: 0 };
+  componentDidMount() { const t = () => { if (window.IX) this.setState({ ix: 1 }); else this.tm = setTimeout(t, 30); }; t(); }
+  componentWillUnmount() { clearTimeout(this.tm); }
+  renderVals() { const D = window.IX; return D ? { groups: D.groupOrder, groupCards: D.groupOrder.map((g) => ({ name: g, items: D.industries.filter((i) => i.group === g).map((i) => ({ name: i.name, href: 'Industry.dc.html?i=' + i.slug })) })) } : {}; }
+}
+</script>
+</body>
+</html>

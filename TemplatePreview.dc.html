@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Template preview · InspireX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<style>body{margin:0;background:#EEF0F3;color:#121418;font-family:Geist,'Helvetica Neue',Arial,sans-serif;-webkit-font-smoothing:antialiased}*{box-sizing:border-box}a{color:inherit;text-decoration:none}a:hover{color:#0175A9}::selection{background:#80DCFE}:focus-visible{outline:2px solid #0175A9;outline-offset:2px}@keyframes ixRise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}</style>
+<script src="ix-data.js"></script>
+</helmet>
+<div id="top" style="min-height:100vh;background:#EEF0F3;padding:12px clamp(8px,1.2vw,16px) 24px;display:flex;flex-direction:column;gap:12px">
+
+<div data-screen-label="Preview toolbar" style="position:sticky;top:12px;z-index:20;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;padding:8px;border-radius:20px;background:rgba(2,6,30,.94);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);color:#FFFFFF">
+  <a href="{{ backHref }}" style="display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border-radius:13px;background:rgba(255,255,255,.08);color:#FFFFFF;font-size:14px;font-weight:500" style-hover="background:rgba(255,255,255,.16);color:#FFFFFF">← Back to {{ i.name }}</a>
+  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:0 8px;font-size:14px"><span style="font-weight:600">{{ t.name }}</span><span style="font-family:'Geist Mono',monospace;font-size:11px;color:#00B9FE">{{ t.layout }} layout · Demo with sample content</span></div>
+  <a href="{{ useHref }}" style="display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:13px;background:#00B9FE;color:#02061E;font-size:14px;font-weight:600;white-space:nowrap" style-hover="background:#80DCFE;color:#02061E">Use this template</a>
+</div>
+
+<div data-screen-label="Demo site" style="flex:1;max-width:1360px;width:100%;margin:0 auto;border-radius:24px;overflow:hidden;background:{{ th.bg }};color:{{ th.fg }};box-shadow:0 30px 60px -40px rgba(2,6,30,.5)">
+  <div style="display:flex;align-items:center;gap:8px;padding:12px 16px;background:{{ th.soft }}">
+    <span style="width:10px;height:10px;border-radius:50%;background:{{ th.line }}"></span><span style="width:10px;height:10px;border-radius:50%;background:{{ th.line }}"></span><span style="width:10px;height:10px;border-radius:50%;background:{{ th.line }}"></span>
+    <span style="flex:1;max-width:360px;margin:0 auto;padding:6px 12px;border-radius:8px;background:{{ th.bg }};font-family:'Geist Mono',monospace;font-size:11px;color:{{ th.mute }};text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ t.slug }}-demo.inspirex.site</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px clamp(18px,3vw,40px)">
+    <span style="font-size:20px;font-weight:600;letter-spacing:-.03em">{{ t.name }}<span style="color:{{ th.accent }}">.</span></span>
+    <div style="display:flex;flex-wrap:wrap;gap:6px 22px;font-size:14px;color:{{ th.mute }}"><span>Services</span><span>About</span><span>Contact</span></div>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;gap:32px;padding:clamp(24px,5vw,64px) clamp(18px,3vw,40px) clamp(32px,5vw,64px)">
+    <div style="flex:1 1 360px;min-width:0;display:flex;flex-direction:column;justify-content:center;gap:18px">
+      <span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:{{ th.accent }}">Sample {{ i.lower }} · Colombo</span>
+      <h1 style="margin:0;font-size:{{ th.h1 }};line-height:.98;font-weight:500;letter-spacing:-.05em;text-wrap:balance">{{ i.action }}<br>in under a minute.</h1>
+      <p style="margin:0;max-width:420px;font-size:15px;line-height:1.6;color:{{ th.mute }}">This is sample content for the {{ t.name }} template. Pick a service and a time to try the booking flow. No real bookings or payments are made.</p>
+    </div>
+    <div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:16px;padding:clamp(18px,2.4vw,28px);border-radius:{{ th.radius }};background:{{ th.soft }};border:1px solid {{ th.line }}">
+      <sc-if value="{{ notDone }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <span style="font-size:13px;font-weight:600">1. Choose</span>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <sc-for list="{{ svcs }}" as="s" hint-placeholder-count="3"><button onClick="{{ s.pick }}" style="display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:48px;padding:0 14px;border-radius:12px;border:1px solid {{ s.bd }};background:{{ s.bg }};color:{{ s.fg }};font:inherit;font-size:14px;font-weight:500;text-align:left;cursor:pointer"><span>{{ s.name }}</span><span style="font-size:12px;opacity:.75">{{ s.meta }}</span></button></sc-for>
+          </div>
+          <span style="font-size:13px;font-weight:600">2. Pick a day and time</span>
+          <div style="display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px">
+            <sc-for list="{{ days }}" as="d" hint-placeholder-count="5"><button onClick="{{ d.pick }}" style="display:flex;flex-direction:column;align-items:center;gap:2px;min-height:56px;padding:6px 0;border-radius:12px;border:1px solid {{ d.bd }};background:{{ d.bg }};color:{{ d.fg }};font:inherit;cursor:pointer"><span style="font-size:11px;opacity:.75">{{ d.wd }}</span><span style="font-size:16px;font-weight:600">{{ d.dn }}</span></button></sc-for>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px">
+            <sc-for list="{{ slots }}" as="s" hint-placeholder-count="6"><button onClick="{{ s.pick }}" style="min-height:44px;border-radius:12px;border:1px solid {{ s.bd }};background:{{ s.bg }};color:{{ s.fg }};font:inherit;font-size:14px;font-weight:500;cursor:pointer">{{ s.t }}</button></sc-for>
+          </div>
+          <button onClick="{{ confirm }}" disabled="{{ cantConfirm }}" style="min-height:52px;border:0;border-radius:{{ th.btnRadius }};background:{{ th.accent }};color:{{ th.onAccent }};font:inherit;font-size:15px;font-weight:600;cursor:pointer;opacity:{{ btnOpacity }}">{{ i.action }}</button>
+        </div>
+      </sc-if>
+      <sc-if value="{{ done }}">
+        <div style="min-height:320px;display:flex;flex-direction:column;justify-content:center;gap:14px">
+          <span style="width:52px;height:52px;border-radius:14px;background:{{ th.accent }};color:{{ th.onAccent }};display:flex;align-items:center;justify-content:center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg></span>
+          <span style="font-size:24px;font-weight:500;letter-spacing:-.03em">Demo booking confirmed</span>
+          <span style="font-size:14px;line-height:1.55;color:{{ th.mute }}">{{ summary }}. This is a demo, so no booking or payment was made.</span>
+          <button onClick="{{ restart }}" style="align-self:flex-start;min-height:44px;padding:0 16px;border-radius:12px;border:1px solid {{ th.line }};background:transparent;color:{{ th.fg }};font:inherit;font-size:14px;cursor:pointer">Try again</button>
+        </div>
+      </sc-if>
+    </div>
+  </div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;industry&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;salons&quot;,&quot;spas&quot;,&quot;fitness&quot;,&quot;clinics&quot;,&quot;dental&quot;,&quot;labs&quot;,&quot;travel-agencies&quot;,&quot;air-ticketing&quot;,&quot;tour-operators&quot;,&quot;legal-accounting&quot;,&quot;architects&quot;,&quot;coaches&quot;,&quot;restaurants&quot;,&quot;events&quot;,&quot;education&quot;],&quot;default&quot;:&quot;salons&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+const SLOTS = ['9:00', '10:30', '12:00', '14:00', '15:30', '17:00'];
+const THEMES = {
+  Classic: { bg: '#FFFFFF', fg: '#121418', mute: '#5C5F64', accent: '#0175A9', onAccent: '#FFFFFF', soft: '#F7F8FA', line: 'rgba(18,20,24,.1)', sel: '#121418', selFg: '#FFFFFF', radius: '20px', btnRadius: '14px', h1: 'clamp(38px,5vw,68px)' },
+  Editorial: { bg: '#FFFFFF', fg: '#121418', mute: '#5C5F64', accent: '#0175A9', onAccent: '#FFFFFF', soft: '#EEF0F3', line: 'rgba(18,20,24,.14)', sel: '#0175A9', selFg: '#FFFFFF', radius: '4px', btnRadius: '4px', h1: 'clamp(44px,6.4vw,92px)' },
+  Bold: { bg: '#02061E', fg: '#FFFFFF', mute: 'rgba(255,255,255,.75)', accent: '#00B9FE', onAccent: '#121418', soft: 'rgba(255,255,255,.06)', line: 'rgba(255,255,255,.16)', sel: '#00B9FE', selFg: '#121418', radius: '28px', btnRadius: '999px', h1: 'clamp(40px,5.6vw,80px)' }
+};
+class Component extends DCLogic {
+  state = { ix: 0, svc: 0, day: 0, slot: -1, done: false };
+  componentDidMount() { const t = () => { if (window.IX) this.setState({ ix: 1 }); else this.tm = setTimeout(t, 30); }; t(); }
+  componentWillUnmount() { clearTimeout(this.tm); }
+  renderVals() {
+    const D = window.IX;
+    if (!D) return {};
+    const { svc, day, slot, done } = this.state;
+    const [pi, pt] = (D.param('tpl') || '').split('--');
+    const i = D.industries.find((x) => x.slug === (pi || D.param('i') || this.props.industry)) || D.industries[0];
+    const t = i.templates.find((x) => x.slug === pt) || i.templates[0];
+    if (typeof document !== 'undefined') document.title = t.name + ' preview · InspireX';
+    const th = THEMES[t.layout];
+    const sel = (on) => ({ bg: on ? th.sel : 'transparent', fg: on ? th.selFg : th.fg, bd: on ? th.sel : th.line });
+    const sample = D.groups[i.group].sample;
+    const base = new Date();
+    const days = Array.from({ length: 5 }, (_, k) => { const d = new Date(base); d.setDate(base.getDate() + k + 1); return d; });
+    const fmt = (d) => d.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' });
+    return {
+      i: { ...i, lower: i.name.toLowerCase() }, t, th,
+      backHref: 'Industry.dc.html?i=' + i.slug, useHref: 'Contact.dc.html?tpl=' + i.slug + '--' + t.slug,
+      svcs: sample.map(([name, meta], k) => ({ name, meta, ...sel(svc === k), pick: () => this.setState({ svc: k }) })),
+      days: days.map((d, k) => ({ wd: d.toLocaleDateString('en-GB', { weekday: 'short' }), dn: d.getDate(), ...sel(day === k), pick: () => this.setState({ day: k, slot: -1 }) })),
+      slots: SLOTS.map((s, k) => ({ t: s, ...sel(slot === k), pick: () => this.setState({ slot: k }) })),
+      cantConfirm: slot < 0, btnOpacity: slot < 0 ? 0.45 : 1,
+      confirm: () => slot >= 0 && this.setState({ done: true }),
+      restart: () => this.setState({ done: false, slot: -1 }),
+      done, notDone: !done,
+      summary: sample[svc][0] + ' on ' + fmt(days[day]) + ' at ' + (SLOTS[slot] || '')
+    };
+  }
+}
+</script>
+</body>
+</html>

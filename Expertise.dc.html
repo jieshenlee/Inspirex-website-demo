@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Expertise · InspireX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<style>body{margin:0;background:#EEF0F3;color:#121418;font-family:Geist,'Helvetica Neue',Arial,sans-serif;-webkit-font-smoothing:antialiased}*{box-sizing:border-box}a{color:inherit;text-decoration:none}a:hover{color:#0175A9}::selection{background:#80DCFE}:focus-visible{outline:2px solid #0175A9;outline-offset:2px}@keyframes ixRise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}</style>
+<script src="ix-data.js"></script>
+</helmet>
+<div id="top" style="min-height:100vh;background:#EEF0F3;overflow-x:hidden">
+<dc-import name="IXHeader" active="expertise" hint-size="100%,0px"></dc-import>
+
+<dc-import name="IXHero" kicker="// Expertise" line1="Industries" line2="we work in." intro="30+ clients across seven industries, from banks and universities to hotel groups and household brands." shape="sphere" logos="true" cta="Book a call" ctaHref="Contact.dc.html" cta2="See case studies" cta2Href="Blog.dc.html?c=case-studies" hint-size="100%,720px"></dc-import>
+
+<section data-screen-label="Industries" style="max-width:1360px;margin:0 auto;padding:0 clamp(20px,3.4vw,48px) clamp(56px,8vw,104px)">
+  <div style="display:flex;flex-wrap:wrap;gap:12px">
+    <sc-for list="{{ items }}" as="x" hint-placeholder-count="7">
+      <div style="flex:1 1 380px;min-width:0;display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;padding:clamp(22px,3vw,32px);border-radius:24px;background:{{ x.bg }};color:{{ x.fg }}">
+        <div style="flex:1 1 220px;min-width:0;display:flex;flex-direction:column;justify-content:space-between;gap:24px">
+          <span style="font-family:'Geist Mono',monospace;font-size:12px;color:{{ x.mute }}">// {{ x.num }}</span>
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <h2 style="margin:0;font-size:clamp(26px,2.8vw,38px);line-height:1;font-weight:500;letter-spacing:-.045em">{{ x.name }}</h2>
+            <div style="display:flex;flex-wrap:wrap;gap:6px"><sc-for list="{{ x.clients }}" as="c" hint-placeholder-count="3"><span style="padding:6px 12px;border-radius:999px;background:{{ x.chip }};font-size:13px;font-weight:500">{{ c }}</span></sc-for></div>
+          </div>
+        </div>
+        <sc-if value="{{ x.hasProof }}">
+          <div style="flex:0 1 200px;display:flex;flex-direction:column;justify-content:flex-end;gap:6px"><span style="font-size:clamp(40px,4vw,56px);line-height:1;font-weight:500;letter-spacing:-.06em;color:{{ x.num2 }}">{{ x.metric }}</span><span style="font-size:13px;line-height:1.45;color:{{ x.mute }}">{{ x.label }} · {{ x.client }}</span></div>
+        </sc-if>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<dc-import name="IXResults" clients="APIIT,Pay&amp;Go,DSI Tyres,Niwadu" hint-size="100%,420px"></dc-import>
+<dc-import name="IXQuotes" hint-size="100%,520px"></dc-import>
+<dc-import name="IXCta" hint-size="100%,380px"></dc-import>
+<dc-import name="IXFooter" hint-size="100%,560px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { ix: 0 };
+  componentDidMount() { const t = () => { if (window.IX) this.setState({ ix: 1 }); else this.tm = setTimeout(t, 30); }; t(); }
+  componentWillUnmount() { clearTimeout(this.tm); }
+  renderVals() {
+    const D = window.IX;
+    if (!D) return {};
+    return {
+      items: D.expertise.map((e, i) => {
+        const r = e.proof ? D.results.find((x) => x.client === e.proof) : null;
+        const dark = i === 0, vio = i === 3;
+        return {
+          ...e, num: '0' + (i + 1), hasProof: !!r, metric: r ? r.metric : '', label: r ? r.label : '', client: r ? r.client : '',
+          bg: dark ? '#02061E' : vio ? 'linear-gradient(160deg,#0175A9 0%,#01517C 100%)' : '#FFFFFF',
+          fg: dark || vio ? '#FFFFFF' : '#121418', mute: dark ? 'rgba(255,255,255,.72)' : vio ? 'rgba(255,255,255,.85)' : '#5C5F64',
+          chip: dark || vio ? 'rgba(255,255,255,.12)' : '#EEF0F3', num2: dark ? '#80DCFE' : vio ? '#FFFFFF' : '#0175A9'
+        };
+      })
+    };
+  }
+}
+</script>
+</body>
+</html>

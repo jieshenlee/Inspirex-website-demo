@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Contact · InspireX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<style>body{margin:0;background:#EEF0F3;color:#121418;font-family:Geist,'Helvetica Neue',Arial,sans-serif;-webkit-font-smoothing:antialiased}*{box-sizing:border-box}a{color:inherit;text-decoration:none}a:hover{color:#0175A9}::selection{background:#80DCFE}:focus-visible{outline:2px solid #0175A9;outline-offset:2px}input,select,textarea{font:inherit;color:inherit}@keyframes ixRise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}</style>
+<script src="ix-data.js"></script>
+</helmet>
+<div id="top" style="min-height:100vh;background:#EEF0F3;overflow-x:hidden">
+<dc-import name="IXHeader" active="contact" hint-size="100%,0px"></dc-import>
+
+<dc-import name="IXHero" kicker="// Contact" line1="Book a call" line2="with our team." intro="Tell us where you want to grow. We reply within one working day with a clear next step." shape="rings" cta="Go to the form" ctaHref="#form" cta2="Email us" cta2Href="mailto:hello@inspirex.digital" f1v="1 day" f1l="to reply, on working days" f2v="Colombo" f2l="Shangri-La Hotel, Colombo 03" f3v="30+" f3l="clients served" hint-size="100%,720px"></dc-import>
+<section id="form" data-screen-label="Contact" style="scroll-margin-top:96px;max-width:1360px;margin:0 auto;padding:0 clamp(20px,3.4vw,48px) clamp(56px,8vw,104px);display:flex;flex-wrap:wrap;gap:48px">
+  <div style="flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:22px">
+    <span style="font-family:'Geist Mono',monospace;font-size:12px;color:#5C5F64">// Contact</span>
+    <h2 style="margin:0;font-size:clamp(34px,4.4vw,60px);line-height:1;font-weight:500;letter-spacing:-.055em">Tell us about<br><span style="color:#757575">your goals.</span></h2>
+    <p style="margin:0;max-width:440px;font-size:16px;line-height:1.6;color:#5C5F64">Tell us where you want to grow. We reply within one working day with a clear next step.</p>
+    <div style="display:flex;flex-direction:column;margin-top:12px;border-top:1px solid rgba(18,20,24,.12)">
+      <div style="display:grid;grid-template-columns:64px minmax(0,1fr) auto;align-items:center;gap:12px;min-height:64px;border-bottom:1px solid rgba(18,20,24,.12)"><span style="font-family:'Geist Mono',monospace;font-size:11px;color:#5C5F64">// Email</span><a href="mailto:hello@inspirex.digital" style="font-size:clamp(15px,1.6vw,18px);font-weight:500;overflow-wrap:anywhere">hello@inspirex.digital</a><button onClick="{{ copyEmail }}" style="min-height:36px;padding:0 14px;border-radius:10px;border:1px solid rgba(18,20,24,.15);background:transparent;font:inherit;font-size:13px;cursor:pointer" style-hover="background:#FFFFFF">{{ emailLabel }}</button></div>
+      <div style="display:grid;grid-template-columns:64px minmax(0,1fr) auto;align-items:center;gap:12px;min-height:64px;border-bottom:1px solid rgba(18,20,24,.12)"><span style="font-family:'Geist Mono',monospace;font-size:11px;color:#5C5F64">// Phone</span><a href="tel:+94773439429" style="font-size:clamp(15px,1.6vw,18px);font-weight:500">+94 77 343 9429</a><button onClick="{{ copyPhone }}" style="min-height:36px;padding:0 14px;border-radius:10px;border:1px solid rgba(18,20,24,.15);background:transparent;font:inherit;font-size:13px;cursor:pointer" style-hover="background:#FFFFFF">{{ phoneLabel }}</button></div>
+      <div style="display:grid;grid-template-columns:64px minmax(0,1fr);align-items:center;gap:12px;min-height:64px;border-bottom:1px solid rgba(18,20,24,.12)"><span style="font-family:'Geist Mono',monospace;font-size:11px;color:#5C5F64">// Office</span><span style="font-size:16px">Shangri-La Hotel, Colombo 03, Sri Lanka</span></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;margin-top:8px">
+      <span style="font-family:'Geist Mono',monospace;font-size:11px;color:#5C5F64">// Follow InspireX</span>
+      <div style="display:flex;flex-wrap:wrap;gap:8px">
+        <a href="#" style="display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:12px;background:#FFFFFF;font-size:14px;font-weight:500" style-hover="background:#DBF5FF;color:#0175A9">LinkedIn</a>
+        <a href="#" style="display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:12px;background:#FFFFFF;font-size:14px;font-weight:500" style-hover="background:#DBF5FF;color:#0175A9">Instagram</a>
+        <a href="#" style="display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:12px;background:#FFFFFF;font-size:14px;font-weight:500" style-hover="background:#DBF5FF;color:#0175A9">Facebook</a>
+        <a href="#" style="display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:12px;background:#FFFFFF;font-size:14px;font-weight:500" style-hover="background:#DBF5FF;color:#0175A9">YouTube</a>
+      </div>
+    </div>
+  </div>
+  <div style="flex:1 1 420px;min-width:0;border-radius:26px;background:#02061E;color:#FFFFFF;padding:clamp(24px,3vw,36px)">
+    <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+      <form onSubmit="{{ submit }}" style="display:flex;flex-direction:column;gap:16px">
+        <sc-if value="{{ hasTpl }}"><div style="display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:12px;background:rgba(0,185,254,.16);font-size:14px"><span style="font-family:'Geist Mono',monospace;font-size:11px;color:#80DCFE">// Template</span>{{ tplLabel }}</div></sc-if>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:16px">
+          <label style="display:flex;flex-direction:column;gap:8px;font-size:13px;font-weight:500">Name<input required="" name="name" style="min-height:48px;padding:0 14px;border-radius:12px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);font-size:15px;color:#FFFFFF;outline:none" style-focus="border-color:#00B9FE"></label>
+          <label style="display:flex;flex-direction:column;gap:8px;font-size:13px;font-weight:500">Work email<input required="" type="email" name="email" style="min-height:48px;padding:0 14px;border-radius:12px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);font-size:15px;color:#FFFFFF;outline:none" style-focus="border-color:#00B9FE"></label>
+        </div>
+        <label style="display:flex;flex-direction:column;gap:8px;font-size:13px;font-weight:500">Company<input name="company" style="min-height:48px;padding:0 14px;border-radius:12px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);font-size:15px;color:#FFFFFF;outline:none" style-focus="border-color:#00B9FE"></label>
+        <label style="display:flex;flex-direction:column;gap:8px;font-size:13px;font-weight:500">I'd like help with
+          <select name="interest" value="{{ interest }}" onChange="{{ pickInterest }}" style="min-height:48px;padding:0 12px;border-radius:12px;border:1px solid rgba(255,255,255,.15);background:#022D4F;font-size:15px;color:#FFFFFF;outline:none">
+            <option>A growth strategy call</option><option>Agentic AI</option><option>Data analytics</option><option>Business model innovation</option><option>Creative and content production</option><option>Digital strategy</option><option>Templates</option><option>Mortgage GPT</option><option>Booking Platform</option><option>Something else</option>
+          </select>
+        </label>
+        <label style="display:flex;flex-direction:column;gap:8px;font-size:13px;font-weight:500">What goal are you working towards?<textarea name="goal" rows="4" value="{{ goal }}" onChange="{{ pickGoal }}" style="padding:12px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);font-size:15px;line-height:1.5;color:#FFFFFF;resize:vertical;outline:none"></textarea></label>
+        <button type="submit" style="display:flex;align-items:center;justify-content:center;gap:12px;min-height:54px;border:0;border-radius:14px;background:#00B9FE;color:#02061E;font:inherit;font-size:15px;font-weight:600;cursor:pointer" style-hover="background:#80DCFE">Request my strategy call</button>
+        <span style="font-size:12px;color:rgba(255,255,255,.6);text-align:center">We use your details only to reply to this request.</span>
+      </form>
+    </sc-if>
+    <sc-if value="{{ sent }}">
+      <div style="min-height:420px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:16px">
+        <span style="width:56px;height:56px;border-radius:14px;background:#0175A9;color:#FFFFFF;display:flex;align-items:center;justify-content:center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg></span>
+        <h2 style="margin:0;font-size:28px;font-weight:500;letter-spacing:-.03em">Thanks, we've got it.</h2>
+        <p style="margin:0;font-size:15px;line-height:1.6;color:rgba(255,255,255,.78)">We reply within one working day with next steps.</p>
+        <button onClick="{{ reset }}" style="min-height:44px;padding:0 18px;border-radius:12px;border:1px solid rgba(255,255,255,.25);background:transparent;color:#FFFFFF;font:inherit;font-size:14px;cursor:pointer" style-hover="background:rgba(255,255,255,.1)">Send another request</button>
+      </div>
+    </sc-if>
+  </div>
+</section>
+
+<section data-screen-label="Three steps" style="max-width:1360px;margin:0 auto;padding:clamp(64px,9vw,120px) clamp(20px,3.4vw,48px) 0;display:flex;flex-direction:column;gap:32px">
+  <div style="display:flex;flex-direction:column;gap:14px"><span style="font-family:'Geist Mono',monospace;font-size:12px;color:#5C5F64">// What happens next</span><h2 style="margin:0;font-size:clamp(34px,4.8vw,68px);line-height:1;font-weight:500;letter-spacing:-.055em">Three steps<br><span style="color:#757575">to a plan.</span></h2></div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:12px">
+    <div style="min-height:220px;display:flex;flex-direction:column;justify-content:space-between;gap:24px;padding:24px;border-radius:22px;background:#02061E;color:#FFFFFF"><span style="font-family:'Geist Mono',monospace;font-size:12px;color:#80DCFE">// 01</span><div style="display:flex;flex-direction:column;gap:10px"><h3 style="margin:0;font-size:clamp(20px,1.9vw,25px);line-height:1.1;font-weight:500;letter-spacing:-.03em">We reply within one working day</h3><p style="margin:0;font-size:14px;line-height:1.55;color:rgba(255,255,255,.78)">A member of the team reads your request and gets back to you.</p></div></div>
+    <div style="min-height:220px;display:flex;flex-direction:column;justify-content:space-between;gap:24px;padding:24px;border-radius:22px;background:#00B9FE;color:#02061E"><span style="font-family:'Geist Mono',monospace;font-size:12px;color:#5C5F64">// 02</span><div style="display:flex;flex-direction:column;gap:10px"><h3 style="margin:0;font-size:clamp(20px,1.9vw,25px);line-height:1.1;font-weight:500;letter-spacing:-.03em">A strategy call</h3><p style="margin:0;font-size:14px;line-height:1.55;color:#5C5F64">We talk through your goals, your market and where growth is hiding.</p></div></div>
+    <div style="min-height:220px;display:flex;flex-direction:column;justify-content:space-between;gap:24px;padding:24px;border-radius:22px;background:#00B9FE;color:#02061E"><span style="font-family:'Geist Mono',monospace;font-size:12px;color:#5C5F64">// 03</span><div style="display:flex;flex-direction:column;gap:10px"><h3 style="margin:0;font-size:clamp(20px,1.9vw,25px);line-height:1.1;font-weight:500;letter-spacing:-.03em">A clear proposal</h3><p style="margin:0;font-size:14px;line-height:1.55;color:#5C5F64">You get a plan with KPIs, timelines and the team who will deliver it.</p></div></div>
+  </div>
+</section>
+<div style="height:clamp(56px,8vw,104px)"></div>
+<dc-import name="IXFooter" hint-size="100%,560px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { sent: false, copied: '', interest: 'A growth strategy call', goal: '', tpl: '' };
+  componentDidMount() {
+    const t = () => {
+      const D = window.IX;
+      if (!D) { this.tm = setTimeout(t, 30); return; }
+      const [pi, pt] = (D.param('tpl') || '').split('--');
+      const i = D.industries.find((x) => x.slug === pi);
+      const tp = i && (i.templates.find((x) => x.slug === pt) || null);
+      if (i && tp) this.setState({ interest: 'Templates', tpl: tp.name + ' · ' + i.name, goal: "I'd like to start with the " + tp.name + ' template for ' + i.name.toLowerCase() + '.' });
+    };
+    t();
+  }
+  componentWillUnmount() { clearTimeout(this.tm); clearTimeout(this.ct); }
+  copy(key, text) {
+    const done = () => { this.setState({ copied: key }); clearTimeout(this.ct); this.ct = setTimeout(() => this.setState({ copied: '' }), 1600); };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, done); else done();
+  }
+  renderVals() {
+    const { sent, copied, interest, goal, tpl } = this.state;
+    return {
+      sent, notSent: !sent, interest, goal, hasTpl: !!tpl, tplLabel: tpl,
+      pickInterest: (e) => this.setState({ interest: e.target.value }),
+      pickGoal: (e) => this.setState({ goal: e.target.value }),
+      submit: (e) => { e.preventDefault(); this.setState({ sent: true }); },
+      reset: () => this.setState({ sent: false }),
+      copyEmail: () => this.copy('email', 'hello@inspirex.digital'),
+      copyPhone: () => this.copy('phone', '+94 77 343 9429'),
+      emailLabel: copied === 'email' ? 'Copied' : 'Copy',
+      phoneLabel: copied === 'phone' ? 'Copied' : 'Copy'
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>@keyframes ixRise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}</style>
+</helmet>
+<header style="position:fixed;top:12px;left:0;right:0;z-index:50;padding:0 clamp(10px,2.4vw,28px)">
+  <div style="max-width:1360px;margin:0 auto;border-radius:20px;background:{{ hdBg }};backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);box-shadow:{{ hdShadow }};transition:background .45s ease,box-shadow .45s ease">
+    <div style="display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:12px;min-height:64px;padding:6px 6px 6px clamp(14px,1.6vw,20px)">
+      <a href="InspireX%20Home%20v13.dc.html" aria-label="InspireX home" style="justify-self:start;position:relative;display:block;width:clamp(112px,10vw,132px);height:30px">
+        <img src="assets/logo-ix.png" alt="InspireX" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:left center;opacity:{{ logoLight }};transition:opacity .45s ease;display:block">
+        <img src="assets/logo-ix-white.png" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:left center;opacity:{{ logoDark }};transition:opacity .45s ease;display:block">
+      </a>
+      <sc-if value="{{ notMob }}" hint-placeholder-val="{{ true }}">
+        <nav aria-label="Primary" style="display:flex;align-items:center;gap:2px">
+          <a href="Services.dc.html" style="display:flex;align-items:center;min-height:42px;padding:0 15px;border-radius:12px;white-space:nowrap;background:{{ nb0 }};color:{{ nf0 }};font-size:15px;font-weight:500;transition:background .35s,color .35s" style-hover="background:{{ hovBg }};color:{{ hovFg }}">Services</a>
+          <a href="Products.dc.html" style="display:flex;align-items:center;min-height:42px;padding:0 15px;border-radius:12px;white-space:nowrap;background:{{ nb1 }};color:{{ nf1 }};font-size:15px;font-weight:500;transition:background .35s,color .35s" style-hover="background:{{ hovBg }};color:{{ hovFg }}">Products</a>
+          <a href="Expertise.dc.html" style="display:flex;align-items:center;min-height:42px;padding:0 15px;border-radius:12px;white-space:nowrap;background:{{ nb2 }};color:{{ nf2 }};font-size:15px;font-weight:500;transition:background .35s,color .35s" style-hover="background:{{ hovBg }};color:{{ hovFg }}">Expertise</a>
+          <a href="Blog.dc.html" style="display:flex;align-items:center;min-height:42px;padding:0 15px;border-radius:12px;white-space:nowrap;background:{{ nb3 }};color:{{ nf3 }};font-size:15px;font-weight:500;transition:background .35s,color .35s" style-hover="background:{{ hovBg }};color:{{ hovFg }}">Blog</a>
+          <a href="Contact.dc.html" style="display:flex;align-items:center;min-height:42px;padding:0 15px;border-radius:12px;white-space:nowrap;background:{{ nb4 }};color:{{ nf4 }};font-size:15px;font-weight:500;transition:background .35s,color .35s" style-hover="background:{{ hovBg }};color:{{ hovFg }}">Contact</a>
+        </nav>
+      </sc-if>
+      <div style="grid-column:3;justify-self:end;display:flex;align-items:center;gap:8px">
+        <sc-if value="{{ notMob }}" hint-placeholder-val="{{ true }}">
+          <a href="Contact.dc.html" style="display:inline-flex;align-items:center;gap:12px;height:52px;padding:5px 22px 5px 5px;border-radius:15px;white-space:nowrap;background:{{ ctaBg }};color:{{ ctaFg }};font-size:15px;font-weight:500;transition:background .45s,color .45s" style-hover="background:#01517C;color:#FFFFFF"><span style="width:42px;height:42px;border-radius:11px;background:{{ ctaChipBg }};color:{{ ctaChipFg }};display:flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 17 5-5-5-5"></path><path d="m13 17 5-5-5-5"></path></svg></span>Book a call</a>
+        </sc-if>
+        <sc-if value="{{ mob }}">
+          <button onClick="{{ toggleMenu }}" aria-label="{{ menuLabel }}" aria-expanded="{{ menuOpenStr }}" style="width:52px;height:52px;border:0;border-radius:15px;background:{{ ctaBg }};color:{{ ctaFg }};display:flex;align-items:center;justify-content:center;cursor:pointer">
+            <sc-if value="{{ menuClosed }}" hint-placeholder-val="{{ true }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h16"></path><path d="M4 16h16"></path></svg></sc-if>
+            <sc-if value="{{ menuOpen }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg></sc-if>
+          </button>
+        </sc-if>
+      </div>
+    </div>
+    <sc-if value="{{ menuOpen }}">
+      <div style="display:flex;flex-direction:column;gap:2px;padding:4px 8px 10px;border-top:1px solid {{ hdLine }};animation:ixRise .35s cubic-bezier(.2,.8,.2,1) both">
+        <a href="Services.dc.html" style="display:flex;justify-content:space-between;align-items:center;min-height:58px;padding:0 16px;border-radius:14px;font-size:24px;font-weight:500;letter-spacing:-.035em;color:{{ hdFg }}" style-hover="background:{{ hovBg }};color:{{ hovFg }}">Services<span style="font-family:'Geist Mono',monospace;font-size:12px;color:{{ hdMute }}">01</span></a>
+        <a href="Products.dc.html" style="display:flex;justify-content:space-between;align-items:center;min-height:58px;padding:0 16px;border-radius:14px;font-size:24px;font-weight:500;letter-spacing:-.035em;color:{{ hdFg }}" style-hover="background:{{ hovBg }};color:{{ hovFg }}">Products<span style="font-family:'Geist Mono',monospace;font-size:12px;color:{{ hdMute }}">02</span></a>
+        <a href="Expertise.dc.html" style="display:flex;justify-content:space-between;align-items:center;min-height:58px;padding:0 16px;border-radius:14px;font-size:24px;font-weight:500;letter-spacing:-.035em;color:{{ hdFg }}" style-hover="background:{{ hovBg }};color:{{ hovFg }}">Expertise<span style="font-family:'Geist Mono',monospace;font-size:12px;color:{{ hdMute }}">03</span></a>
+        <a href="Blog.dc.html" style="display:flex;justify-content:space-between;align-items:center;min-height:58px;padding:0 16px;border-radius:14px;font-size:24px;font-weight:500;letter-spacing:-.035em;color:{{ hdFg }}" style-hover="background:{{ hovBg }};color:{{ hovFg }}">Blog<span style="font-family:'Geist Mono',monospace;font-size:12px;color:{{ hdMute }}">04</span></a>
+        <a href="Contact.dc.html" style="display:flex;justify-content:space-between;align-items:center;min-height:58px;padding:0 16px;border-radius:14px;font-size:24px;font-weight:500;letter-spacing:-.035em;color:{{ hdFg }}" style-hover="background:{{ hovBg }};color:{{ hovFg }}">Contact<span style="font-family:'Geist Mono',monospace;font-size:12px;color:{{ hdMute }}">05</span></a>
+        <a href="Contact.dc.html" style="margin-top:8px;display:flex;align-items:center;gap:12px;min-height:58px;padding:6px 20px 6px 6px;border-radius:16px;background:{{ ctaBg }};color:{{ ctaFg }};font-size:16px;font-weight:500" style-hover="background:#01517C;color:#FFFFFF"><span style="width:46px;height:46px;border-radius:12px;background:{{ ctaChipBg }};color:{{ ctaChipFg }};display:flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 17 5-5-5-5"></path><path d="m13 17 5-5-5-5"></path></svg></span>Book a call</a>
+      </div>
+    </sc-if>
+  </div>
+</header>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;active&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;&quot;,&quot;services&quot;,&quot;products&quot;,&quot;expertise&quot;,&quot;blog&quot;,&quot;contact&quot;],&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;darkAfter&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:360,&quot;tsType&quot;:&quot;number&quot;}}">
+class Component extends DCLogic {
+  state = { past: false, mob: typeof window !== 'undefined' && window.innerWidth < 1000, menu: false };
+  componentDidMount() {
+    this.onScroll = () => { const past = window.scrollY > (this.props.darkAfter ?? 360); if (past !== this.state.past) this.setState({ past }); };
+    this.onResize = () => { const mob = window.innerWidth < 1000; if (mob !== this.state.mob) this.setState({ mob, menu: false }); };
+    this.onKey = (e) => { if (e.key === 'Escape' && this.state.menu) this.setState({ menu: false }); };
+    window.addEventListener('scroll', this.onScroll, { passive: true }); window.addEventListener('resize', this.onResize); window.addEventListener('keydown', this.onKey);
+    this.onScroll(); this.onResize();
+  }
+  componentWillUnmount() { window.removeEventListener('scroll', this.onScroll); window.removeEventListener('resize', this.onResize); window.removeEventListener('keydown', this.onKey); }
+  renderVals() {
+    const { past, mob, menu } = this.state;
+    const active = this.props.active || '';
+    const v = {};
+    ['services', 'products', 'expertise', 'blog', 'contact'].forEach((id, i) => {
+      const on = active === id;
+      v['nb' + i] = on ? (past ? '#0175A9' : '#121418') : 'transparent';
+      v['nf' + i] = on ? '#FFFFFF' : (past ? '#FFFFFF' : '#121418');
+    });
+    return {
+      ...v,
+      ...(past ? {
+        hdBg: 'rgba(2,6,30,.9)', hdShadow: '0 18px 40px -18px rgba(2,6,30,.7),inset 0 0 0 1px rgba(255,255,255,.08)', hdFg: '#FFFFFF', hdMute: '#00B9FE', hdLine: 'rgba(255,255,255,.1)',
+        hovBg: 'rgba(255,255,255,.1)', hovFg: '#FFFFFF', ctaBg: '#00B9FE', ctaFg: '#02061E', ctaChipBg: '#02061E', ctaChipFg: '#FFFFFF', logoLight: 0, logoDark: 1
+      } : {
+        hdBg: 'rgba(255,255,255,.9)', hdShadow: '0 14px 36px -18px rgba(2,6,30,.35),inset 0 0 0 1px rgba(18,20,24,.06)', hdFg: '#121418', hdMute: '#5C5F64', hdLine: 'rgba(18,20,24,.08)',
+        hovBg: '#DBF5FF', hovFg: '#0175A9', ctaBg: '#0175A9', ctaFg: '#FFFFFF', ctaChipBg: '#FFFFFF', ctaChipFg: '#0175A9', logoLight: 1, logoDark: 0
+      }),
+      mob, notMob: !mob, menuOpen: mob && menu, menuClosed: !menu, menuOpenStr: menu ? 'true' : 'false', menuLabel: menu ? 'Close menu' : 'Open menu',
+      toggleMenu: () => this.setState({ menu: !menu })
+    };
+  }
+}
+</script>
+</body>
+</html>

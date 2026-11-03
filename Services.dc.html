@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Services · InspireX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<style>body{margin:0;background:#EEF0F3;color:#121418;font-family:Geist,'Helvetica Neue',Arial,sans-serif;-webkit-font-smoothing:antialiased}*{box-sizing:border-box}a{color:inherit;text-decoration:none}a:hover{color:#0175A9}::selection{background:#80DCFE}:focus-visible{outline:2px solid #0175A9;outline-offset:2px}@keyframes ixRise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}</style>
+<script src="ix-data.js"></script>
+</helmet>
+<div id="top" style="min-height:100vh;background:#EEF0F3;overflow-x:hidden">
+<dc-import name="IXHeader" active="services" hint-size="100%,0px"></dc-import>
+
+<dc-import name="IXHero" kicker="// Services" line1="Five services," line2="one growth team." intro="Strategy, technology and creative under one roof. Each service works alone or as part of one growth programme." shape="rings" logos="true" cta="Book a call" ctaHref="Contact.dc.html" cta2="See case studies" cta2Href="Blog.dc.html?c=case-studies" hint-size="100%,720px"></dc-import>
+
+<section data-screen-label="Service list" style="max-width:1360px;margin:0 auto;padding:0 clamp(20px,3.4vw,48px) clamp(64px,9vw,120px);display:flex;flex-direction:column;gap:12px">
+  <sc-for list="{{ services }}" as="s" hint-placeholder-count="5">
+    <a href="{{ s.href }}" style="position:relative;display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px 40px;padding:clamp(22px,3vw,36px) clamp(76px,8vw,96px) clamp(22px,3vw,36px) clamp(22px,3vw,36px);border-radius:24px;background:{{ s.bg }};color:{{ s.fg }};transition:transform .35s ease-out" style-hover="transform:translateY(-3px);color:{{ s.fg }}">
+      <span style="flex:0 0 64px;font-family:'Geist Mono',monospace;font-size:12px;padding-top:10px;color:{{ s.mute }}">// {{ s.num }}</span>
+      <div style="flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:12px">
+        <h2 style="margin:0;font-size:clamp(28px,3.4vw,46px);line-height:1;font-weight:500;letter-spacing:-.045em">{{ s.title }}</h2>
+        <p style="margin:0;max-width:460px;font-size:15px;line-height:1.6;color:{{ s.mute }}">{{ s.short }}</p>
+      </div>
+      <ul style="flex:1 1 300px;min-width:0;margin:0;padding:0;list-style:none;display:flex;flex-direction:column">
+        <sc-for list="{{ s.does }}" as="d" hint-placeholder-count="3"><li style="padding:10px 0;border-top:1px solid {{ s.line }};font-size:14px;line-height:1.45">{{ d }}</li></sc-for>
+      </ul>
+      <span style="position:absolute;top:clamp(22px,3vw,36px);right:clamp(22px,3vw,36px);width:44px;height:44px;border-radius:12px;background:{{ s.chip }};color:{{ s.chipFg }};display:flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span>
+    </a>
+  </sc-for>
+</section>
+
+<dc-import name="IXProcess" hint-size="100%,560px"></dc-import>
+<dc-import name="IXResults" clients="APIIT,UCL,Pay&amp;Go,DSI Tyres" hint-size="100%,420px"></dc-import>
+<dc-import name="IXQuotes" hint-size="100%,520px"></dc-import>
+<dc-import name="IXCta" hint-size="100%,380px"></dc-import>
+<dc-import name="IXFooter" hint-size="100%,560px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { ix: 0 };
+  componentDidMount() { const t = () => { if (window.IX) this.setState({ ix: 1 }); else this.tm = setTimeout(t, 30); }; t(); }
+  componentWillUnmount() { clearTimeout(this.tm); }
+  renderVals() {
+    const D = window.IX;
+    if (!D) return {};
+    return {
+      services: D.services.map((s, i) => {
+        const dark = i === 0;
+        return {
+          ...s, num: '00' + (i + 1), href: D.serviceHref(s.slug), does: s.does.slice(0, 3),
+          bg: dark ? '#02061E' : '#FFFFFF', fg: dark ? '#FFFFFF' : '#121418', mute: dark ? 'rgba(255,255,255,.75)' : '#5C5F64',
+          line: dark ? 'rgba(255,255,255,.12)' : 'rgba(18,20,24,.08)', chip: dark ? '#FFFFFF' : '#EEF0F3', chipFg: '#121418'
+        };
+      })
+    };
+  }
+}
+</script>
+</body>
+</html>
